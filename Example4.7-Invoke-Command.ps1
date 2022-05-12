@@ -1,4 +1,4 @@
-# Requires psremoting enabled regardless of whether this is localhost or a remote system
+# Requires Administrator and psremoting enabled regardless of whether this is localhost or a remote system
 
 # The commands to run in a background job
 $ScriptBlock = { 
