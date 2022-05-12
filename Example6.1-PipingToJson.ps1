@@ -2,4 +2,4 @@
 Get-Process | ConvertTo-Json | Out-File procs.json​
 
 # Read processes from json file
-Get-Content ./procs.json | ConvertFrom-Json
+Get-Content .\procs.json | ConvertFrom-Json

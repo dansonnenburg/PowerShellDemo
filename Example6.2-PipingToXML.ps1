@@ -2,4 +2,4 @@
 Get-Process | Export-CliXML proc.xml
 
 # Import process information from XML
-Import-Clixml ./proc.xml
+Import-Clixml .\procs.xml
