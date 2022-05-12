@@ -1,9 +1,11 @@
+# Requires psremoting enabled regardless of whether this is localhost or a remote system
+
 # The commands to run in a background job
 $ScriptBlock = { 
-    Get-ChildItem -Path 'C:\Program Files\' -Include '*.exe' -Recurse -ErrorAction SilentlyContinue
+    Get-Service
 }
 # Run the ScriptBlock in the Background
-Invoke-Command -ComputerName 'CL01' -ScriptBlock $ScriptBlock -AsJob -JobName 'test'
+Invoke-Command -ComputerName 'localhost' -ScriptBlock $ScriptBlock -AsJob -JobName 'test'
 
 # Get Status of 'test' job
 Get-Job -Name 'test'
