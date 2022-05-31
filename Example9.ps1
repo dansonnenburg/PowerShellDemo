@@ -24,3 +24,11 @@ $computers | ForEach-Object {
     Write-Output "$_ is the $count object in the array."
     $count++
 }
+
+# Doing arithmetic with variables
+$number = Read-Host "Enter a number"
+$number * 10 # whoa...what is this craziness... it multiplies the string 100 (10) times, by repeating the string 100 ten times
+
+# Making the variable an integer type
+[int]$number = Read-Host "Enter a number"
+$number * 10 # now this returns an integer with the result of 1000, as we would expect
