@@ -1,3 +1,10 @@
+# Example 9.1
+# Example of escaping the $ in the first line of the string
+$computername = 'Server01'
+$EscapedString = "`$computername`ncontains`n$computername"
+$EscapedString
+
+# Example 9.2
 # this object...
 $computers = "computer1, computer2"
 $computers[0] # This returns the first letter in the string
@@ -25,6 +32,7 @@ $computers | ForEach-Object {
     $count++
 }
 
+# Example 9.3
 # Doing arithmetic with variables
 $number = Read-Host "Enter a number"
 $number * 10 # whoa...what is this craziness... it multiplies the string 100 (10) times, by repeating the string 100 ten times
@@ -46,8 +54,3 @@ Function Get-ServiceStatus {
 Get-ServiceStatus
 # Yet, the script variable $service is still set to 'spooler'
 Write-Output "The script-scoped variable `$service is still $service."
-
-# Example of escaping the $ in the first line of the string
-$computername = 'Server01'
-$EscapedString = "`$computername`ncontains`n$computername"
-$EscapedString

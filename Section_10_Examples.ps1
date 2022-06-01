@@ -1,9 +1,12 @@
+# Example 10.1
 # How to use Read-Host cmdlet
 Read-Host "Enter a computer name"
 
+# Example 10.2
 # How to use Write-Host (ignores the pipeline)
 Write-Host "Server01" -ForegroundColor Yellow -BackgroundColor Magenta
 
+# Example 10.3
 # How to use write-output (uses the pipeline by default)
 Write-Output "Hello"
 
