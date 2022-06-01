@@ -32,3 +32,22 @@ $number * 10 # whoa...what is this craziness... it multiplies the string 100 (10
 # Making the variable an integer type
 [int]$number = Read-Host "Enter a number"
 $number * 10 # now this returns an integer with the result of 1000, as we would expect
+# Variable Scoping
+
+# Variable Scoped to Script
+$service = 'spooler'
+
+Function Get-ServiceStatus {
+    $service = 'teamviewer' # the variable $service is scoped inside the function here
+    $status = Get-Service -Name $service | Select-Object -ExpandProperty Status
+    Write-Output "The service $service is in the $status status."
+}
+# We see that it returns a result for the teamviewer service which was scoped to the function
+Get-ServiceStatus
+# Yet, the script variable $service is still set to 'spooler'
+Write-Output "The script-scoped variable `$service is still $service."
+
+# Example of escaping the $ in the first line of the string
+$computername = 'Server01'
+$EscapedString = "`$computername`ncontains`n$computername"
+$EscapedString
