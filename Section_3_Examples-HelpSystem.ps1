@@ -14,10 +14,14 @@ Get-Help Get-Process -Examples
 Get-Help Get-Process -Online
 
 # Get help using a wilcard in the -Name parameter
-Get-Help Get-AD*
+Get-Help *AD*
 
 # Using Get-Command
 Get-Command *Get* -Type cmdlet
 
 # Get Active Directory Commands by its noun
 Get-Command -Noun AD*
+
+Get-ITToolkitHelp
+
+Get-Help Get-Process -ShowWindow

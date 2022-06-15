@@ -1,5 +1,5 @@
 # Example 4.1 - Using an exe with a CLI
-ping CL01
+& ping CL01
 
 # Example 4.2 - Command Aliases
 Get-Process
@@ -22,7 +22,7 @@ Get-CimInstance -ClassName Win32_OperatingSystem -Comp CL01
 # you will see that the alias for 'ErrorAction' is 'ea'
 
 # Example 4.6 - Positional Parameters
-Get-Help Get-Process 
+Get-Help Get-Process -Full
 # Get-Process accepts a property called 'Name' as the first parameter, as seen in the help file.
 
 # Example 4.7 - Running a Command

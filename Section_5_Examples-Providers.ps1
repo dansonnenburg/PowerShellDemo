@@ -18,5 +18,7 @@ Get-Item $env:TEMP\test2.txt
 Rename-Item $env:TEMP\test.txt $env:TEMP\test1.txt
 Get-ChildItem $env:TEMP | Where-Object {$_.Name -like 'test*'}
 Remove-Item $env:TEMP\test1.txt
-Remove-Item $env:TEMP\test2.txt
+Remove-Item $env:TEMP\test2.txt -Confirm
 Get-ChildItem $env:TEMP | Where-Object {$_.Name -like 'test*'}
+
+Get-ChildItem env:*
