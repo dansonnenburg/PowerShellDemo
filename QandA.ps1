@@ -15,18 +15,9 @@ Get-Command -Module ImportExcel
 # Execute some commands in Excel
 Get-ExcelSheetInfo -Path ".\excel_demo.xlsx"
 
-# Help about Import-Excel
-Get-Help Import-Excel -Examples
+$path = Resolve-Path ".\powershelldemo\excel_demo.xlsx"
+$excel = Open-ExcelPackage -Path $path
+Select-Worksheet -ExcelPackage $excel -WorksheetName "Sheet1" 
 
-# Get the columns and values in a spreadsheet
-Import-Excel -Path ".\excel_demo.xlsx"
-
-# Get Help about Set-Row
-Get-Help Set-Row -Examples
-
-$objExcel = New-Object -ComObject Excel.Application
-$worksheet = $objExcel.Workbooks.Open("C:\Users\dan.sonnenburg\github\PowerShellDemo\excel_demo.xlsx")
-
-$worksheetObj = New-Object -TypeName OfficeOpenXml.ExcelPackage
-
-Set-ExcelRow -Worksheet $worksheet -Heading Column1 -Value "test3"
+Set-ExcelRow -ExcelPackage $excel -value "test3" -verbose
+Close-ExcelPackage -ExcelPackage $excel
