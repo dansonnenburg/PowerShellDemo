@@ -7,7 +7,7 @@ Function Do-SomethingUseful {
     param(
         [switch]$SomethingUseful
     )
-    If ($SomethingUseful) {
+    If ($SomethingUseful -eq $true) {
         Write-Output "This was really useful."
     }
     Else {
@@ -29,5 +29,9 @@ Write-Output "Hello"
 Write-Output "Hello" | Where-Object { $_.length -gt 10 } # returns nothing, because it does not meet criteria
 
 # Write-Output with filtered output in pipeline example 2
-[int[]]$integers = 1, 2, 3, 5, 10, 20, 30, 40, 50
-Write-Output $integers | Where-Object { $_ -gt 10 }
+$integers = @(1, 2, 3, 5, 10, 20, 30, 40, 50)
+Write-Output $integers `
+| Where-Object { $_ -gt 10 }
+
+# Make the computer beep.  This is an accent character preceeding the a. ;)
+"`a"
