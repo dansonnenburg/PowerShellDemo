@@ -25,7 +25,7 @@ $Top5procs = $processes | Sort-Object CPU -Descending | Select-Object ProcessNam
 Write-Output $Top5procs
 
 # Another example of working with items in an array
-$computers = "computer1", "computer2"
+$computers = @("computer1", "computer2")
 $count = 1
 $computers | ForEach-Object {
     Write-Output "$_ is the $count object in the array."
@@ -34,8 +34,12 @@ $computers | ForEach-Object {
 
 # Example 9.3
 # Doing arithmetic with variables
-$number = Read-Host "Enter a number"
+$number = Read-Host "Enter a number" # try 100
 $number * 10 # whoa...what is this craziness... it multiplies the string 100 (10) times, by repeating the string 100 ten times
+
+
+# Clear variable before changing its type
+Clear-Variable -Name number
 
 # Making the variable an integer type
 [int]$number = Read-Host "Enter a number"
