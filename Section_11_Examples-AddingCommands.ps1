@@ -11,4 +11,4 @@ Get-Module
 Get-Module -ListAvailable
 
 # Example 11.4 - Get commands available in a module
-Get-Command –Module IT-Toolkit
+Get-Command -Module IT-Toolkit
